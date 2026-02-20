@@ -274,12 +274,6 @@ performance-bottleneck/
 └── package.json               # Workspace root
 ```
 
-## Business Model
-
-- **Open Source Core** — All packages MIT licensed, free to self-host
-- **SaaS Tier** — Managed hosting, data retention, advanced analytics
-- **Enterprise** — SSO, dedicated infrastructure, SLAs
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

@@ -13,6 +13,21 @@ Open-source performance monitoring tool that detects bottlenecks in production w
 - **VS Code Extension** — Status bar metrics, regression alerts, and performance summaries
 - **SDK** — Framework integrations for React (hooks + context), Next.js (App Router + Pages Router), and vanilla JS
 
+## How It Compares
+
+|                       | Chrome DevTools        | Lighthouse         | PageSpeed Insights         | **PBN Analyzer**                     |
+| --------------------- | ---------------------- | ------------------ | -------------------------- | ------------------------------------ |
+| **Data source**       | Single browser session | Synthetic lab test | Lab + limited field (CrUX) | Real User Monitoring (all visitors)  |
+| **Environment**       | Chrome only            | Chrome only        | Web-based                  | Any browser                          |
+| **When**              | Manual, during dev     | Manual or CI       | On-demand                  | Continuous, in production            |
+| **Regression alerts** | —                      | —                  | —                          | Slack, email, webhooks, VS Code      |
+| **Trend analysis**    | —                      | CI diffing only    | 28-day CrUX                | Real-time with statistical detection |
+| **Custom metrics**    | Performance marks      | —                  | —                          | Arbitrary named metrics + spans      |
+| **Self-hosted**       | N/A                    | N/A                | No                         | Yes (Docker or npm)                  |
+| **Framework SDK**     | —                      | —                  | —                          | React hooks, Next.js, vanilla JS     |
+
+**In short:** Browser DevTools and Lighthouse are _diagnostic_ tools — they tell you _why_ a page is slow during development. PBN Analyzer is a _monitoring_ tool — it tells you _that_ something got slower for real users in production and alerts your team. Use them together: PBN catches the regression, DevTools helps you fix it.
+
 ## Quick Start
 
 ```bash

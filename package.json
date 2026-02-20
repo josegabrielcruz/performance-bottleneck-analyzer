@@ -1,0 +1,39 @@
+{
+  "name": "performance-bottleneck-analyzer",
+  "version": "0.1.0",
+  "description": "Open source performance monitoring tool that detects bottlenecks in production web apps and provides actionable insights",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules && rm -rf **/node_modules"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "turbo": "^1.10.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "performance",
+    "monitoring",
+    "web-vitals",
+    "analytics",
+    "regression-detection"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

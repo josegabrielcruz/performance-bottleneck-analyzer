@@ -1,0 +1,25 @@
+FROM node:20-slim AS build
+
+WORKDIR /app
+
+COPY package.json package-lock.json turbo.json ./
+COPY packages/dashboard/package.json ./packages/dashboard/
+COPY packages/browser-agent/package.json ./packages/browser-agent/
+COPY packages/sdk/package.json ./packages/sdk/
+
+RUN npm ci
+
+COPY tsconfig.json ./
+COPY packages/browser-agent/ ./packages/browser-agent/
+COPY packages/sdk/ ./packages/sdk/
+COPY packages/dashboard/ ./packages/dashboard/
+
+RUN npx turbo run build --filter=@pbn/dashboard...
+
+# Serve with nginx
+FROM nginx:alpine
+
+COPY --from=build /app/packages/dashboard/dist /usr/share/nginx/html
+COPY packages/dashboard/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80

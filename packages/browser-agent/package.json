@@ -1,0 +1,33 @@
+{
+  "name": "@pbn/browser-agent",
+  "version": "0.1.0",
+  "description": "Lightweight browser agent for collecting performance metrics from production sites",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "keywords": [
+    "performance",
+    "web-vitals",
+    "monitoring",
+    "analytics"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

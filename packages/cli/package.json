@@ -1,0 +1,36 @@
+{
+  "name": "@pbn/cli",
+  "version": "0.1.0",
+  "description": "Command-line interface for Performance Bottleneck Analyzer",
+  "bin": {
+    "pbn": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "axios": "^1.6.0",
+    "@pbn/analytics-engine": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.0.0",
+    "eslint": "^8.0.0"
+  },
+  "keywords": [
+    "performance",
+    "cli",
+    "tool"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

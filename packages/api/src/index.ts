@@ -13,11 +13,11 @@ import sitesRoutes from './routes/sites';
 import webhooksRoutes from './routes/webhooks';
 
 // Load .env in development
-try {
-  require('dotenv').config();
-} catch {
-  /* dotenv optional */
-}
+import('dotenv')
+  .then((d) => d.config())
+  .catch(() => {
+    /* dotenv optional */
+  });
 
 const app: Express = express();
 const PORT = process.env.PORT || 3001;
